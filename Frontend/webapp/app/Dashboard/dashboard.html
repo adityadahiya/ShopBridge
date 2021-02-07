@@ -1,0 +1,32 @@
+<div class="panel-heading clearfix">
+    <button class="btn btn-primary btn-sm p-sm m-sm pull-right" ng-click="openAddItemModal()"><strong>+</strong>&nbsp;Click to Add Item</button>
+    <span class="pull-left">List Of Items</span>
+</div>
+<div class="panel-body thin-scroll" style="height: calc(100vh - 300px)">
+    <a class="list-group-item" ng-repeat="item in itemList.ITEM_LIST"
+       ng-if="itemList.ITEM_LIST.length">
+        <div class="media-box">
+            <div class="pull-left mr-sm"><img class="media-box-object img-circle thumb32" src="{{item.fileDownloadURL}}"
+                                              ng-click="goToItem(item.id)"
+                                              style="cursor: pointer;"
+                                              ng-if="item.fileDownloadURL"
+                                              height="50px" width="50px"
+                                              alt="Image"></div>
+            <div class="media-box-body clearfix">
+                <small class="pull-right">{{item.price}}$</small>
+                <strong
+                        class="media-box-heading text-primary" ng-click="goToItem(item.id)"
+                        style="cursor: pointer"> <span
+                        class="circle circle-success circle-lg text-left"></span>{{item.name}}
+                </strong>
+                <p class="mb-sm"><small>{{item.description}}</small>
+                    <button class="btn btn-danger pull-right" style="padding: 4px 8px 4px 8px;"
+                            ng-click="deleteItem(item.id)"><strong>X</strong></button>
+                </p>
+            </div>
+        </div>
+    </a>
+    <div class="row" ng-if="!itemList.ITEM_LIST.length">
+        <h2>No Data Available </h2>
+    </div>
+</div>

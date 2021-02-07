@@ -1,0 +1,37 @@
+<div class="panel panel-active m0 modal-lg">
+    <div class="panel-heading">
+        Item Details
+    </div>
+    <form name="productAdd"
+          ng-submit="addItem(item.name,item.description,item.price,item.file)" method="post">
+        <div class="panel-body form-control" style="min-height: 250px !important; border: none">
+
+            <div class="row">
+                <div class="col-md-4 col-lg-4"><strong>Name</strong></div>
+                <div class="col-md-8 col-lg-8"><input type="text" ng-model="item.name" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mt-md">
+                <div class="col-md-4 col-lg-4"><strong>Description</strong></div>
+                <div class="col-md-8 col-lg-8"><textarea ng-model="item.description" class="form-control" required
+                                                         ng-maxlength="1000" rows="4"
+                                                         cols="50"></textarea></div>
+            </div>
+            <div class="row mt-md">
+                <div class="col-md-4 col-lg-4"><strong>Price</strong></div>
+                <div class="col-md-8 col-lg-8"><input type="number" class="form-control" ng-model="item.price" required>
+                </div>
+            </div>
+            <div class="row mt-md">
+                <div class="col-md-4 col-lg-4"><strong>Upload Image</strong></div>
+                <div class="col-md-8 col-lg-8"><input type="file" class="form-control" file-input="item.file"/></div>
+            </div>
+            <div class="row" style="background: rose; color: red;" ng-if="error">
+                {{error}}
+            </div>
+        </div>
+        <div class="panel-footer clearfix p-sm">
+            <button class="btn btn-primary btn-sm p-sm m-sm" type="submit">Add Item</button>
+        </div>
+    </form>
+</div>

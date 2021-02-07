@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>ShopBridge</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app/vendor/css/bootstrap.css">
+    <link rel="stylesheet" href="app/app.css">
+    <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<!--<script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.min.js"></script>-->
+<script src="app/vendor/js/jquery/jquery.js"></script>
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script>-->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script src="app/vendor/js/bootstrap/bootstrap.min.js"></script>
+<script src="app/vendor/js/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="app/app.js"></script>
+
+<script src="app/Dashboard/DashboardController.js"></script>
+<script src="app/Dashboard/Item/ItemController.js"></script>
+<script src="app/services/api.service.js"></script>
+<script src="app/directives/fileInput.js"></script>
+<script src="app/modals/AddItemController.js"></script>
+<script src="app/components/version/version.js"></script>
+<script src="app/components/version/version-directive.js"></script>
+<script src="app/components/version/interpolate-filter.js"></script>
+
+<div ui-view></div>
+</body>
+</html>

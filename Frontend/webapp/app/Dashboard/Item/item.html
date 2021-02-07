@@ -1,0 +1,27 @@
+<div class="panel-heading">
+    Item Details
+</div>
+<div class="panel-body" style="height: calc(100vh - 300px)">
+    <div class="col-md-6 col-lg-6">
+        <div class="row">
+            <div class="col-md-4 col-lg-4"><strong>Name</strong></div>
+            <div class="col-md-8 col-lg-8"><input type="text" ng-model="item.ITEM_DATA.name" class="form-control" disabled>
+            </div>
+        </div>
+        <div class="row mt-md">
+            <div class="col-md-4 col-lg-4"><strong>Description</strong></div>
+            <div class="col-md-8 col-lg-8"><textarea ng-model="item.ITEM_DATA.description" class="form-control"
+                                                     disabled
+                                                     ng-maxlength="1000" rows="4"
+                                                     cols="50"></textarea></div>
+        </div>
+        <div class="row mt-md">
+            <div class="col-md-4 col-lg-4"><strong>Price</strong></div>
+            <div class="col-md-8 col-lg-8"><input type="number" class="form-control" ng-model="item.ITEM_DATA.price" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-6">
+        <img src="{{item.ITEM_DATA.fileDownloadURL}}" style="max-width: 500px; max-height:600px">
+    </div>
+</div>
