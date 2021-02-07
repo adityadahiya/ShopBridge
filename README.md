@@ -42,9 +42,9 @@ A window should open showing you the test executions. Both the tests should pass
 
 ## Frontend
 
-1.Pre-requisite: You should have node.js and npm installed on your system.
-2.Open terminal and navigate to Frontend/webapp within the repository.
-3.Run command: 'npm install -g http-server' and then 'http-server -o ./app'.
-4.The application will open in a browser on port 8081.
+1. Pre-requisite: You should have node.js and npm installed on your system.
+2. Open terminal and navigate to Frontend/webapp within the repository.
+3. Run command: 'npm install -g http-server' and then 'http-server -o ./app'.
+4. The application will open in a browser on port 8081.
 
 
