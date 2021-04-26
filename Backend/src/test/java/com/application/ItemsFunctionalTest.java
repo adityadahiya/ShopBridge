@@ -24,7 +24,7 @@ public class ItemsFunctionalTest {
     @Test
     public void testItemController() throws IOException {
         ItemDTO itemDTO = createItemDTO();
-        ItemDTO newItem = itemController.saveItem(itemDTO.getName(), itemDTO.getDescription(), itemDTO.getPrice(), null);
+        ItemDTO newItem = itemController.saveItem(itemDTO.getId(), itemDTO.getName(), itemDTO.getDescription(), itemDTO.getPrice(), null);
         ItemDTO retrievedItem = itemController.getItems().get(0);
         Assertions.assertEquals(newItem.getName(), itemDTO.getName());
         Assertions.assertEquals(newItem.getId(), retrievedItem.getId());
@@ -38,7 +38,7 @@ public class ItemsFunctionalTest {
     @Test
     public void testDeleteItem() throws IOException {
         ItemDTO itemDTO = createItemDTO();
-        ItemDTO newItem = itemController.saveItem(itemDTO.getName(), itemDTO.getDescription(), itemDTO.getPrice(), null);
+        ItemDTO newItem = itemController.saveItem(itemDTO.getId(), itemDTO.getName(), itemDTO.getDescription(), itemDTO.getPrice(), null);
         ItemDTO retrievedItem = itemController.getItems().get(0);
         itemController.deleteItemById(retrievedItem.getId());
         List<ItemDTO> list = itemController.getItems();

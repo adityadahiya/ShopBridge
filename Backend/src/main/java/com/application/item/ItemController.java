@@ -12,6 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InvalidObjectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +24,14 @@ public class ItemController {
     ItemService itemService;
 
     @PostMapping
-    public ItemDTO saveItem(@RequestParam String name, String description, Long price, MultipartFile fileData ) throws IOException {
+    public ItemDTO saveItem(@RequestParam(required = false) long id, String name, String description, Long price, MultipartFile fileData) throws IOException {
         InputStream inputStream = null;
         Item item = new Item();
         try {
             ItemDTO itemDTO = new ItemDTO();
+            if (id != 0) {
+                itemDTO = getItem(id);
+            }
             itemDTO.setName(name);
             itemDTO.setDescription(description);
             itemDTO.setPrice(price);
@@ -58,7 +62,7 @@ public class ItemController {
     }
 
     @GetMapping
-    public List<ItemDTO> getItems(){
+    public List<ItemDTO> getItems() {
         List<Item> items = itemService.getAllItems();
         return convertItemListToItemDTOList(items);
     }
@@ -97,7 +101,7 @@ public class ItemController {
 
     private static List<ItemDTO> convertItemListToItemDTOList(List<Item> items) {
         List<ItemDTO> itemDTOList = new ArrayList<ItemDTO>();
-        for (Item item: items) {
+        for (Item item : items) {
             itemDTOList.add(convertEntityToItemDTO(item));
         }
         return itemDTOList;
