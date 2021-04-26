@@ -1,0 +1,77 @@
+/* app css stylesheet */
+body {
+    background: #e7faff !important;
+}
+.box {
+    background: #fff !important;
+    padding: 10px !important;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: calc(100vh - 50px)
+}
+
+.thin-scroll {
+    overflow-y: scroll;
+  }
+  .thin-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #FAFAFA;
+  }
+  .thin-scroll::-webkit-scrollbar {
+    width: 4px;
+    background-color: #FAFAFA;
+  }
+  .thin-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #22436d;
+  }
+  .mt-md {
+    margin-top: 10px
+  }
+  .ml-sm {
+    margin-left: 5px;
+  }
+  .ml-md {
+    margin-left: 10px;
+  }
+  .mr-sm {
+    margin-right: 5px;
+  }
+  .mb-sm {
+    margin-bottom: 5px;
+  }
+  .mt-sm {
+    margin-top: 5px;
+  }
+  .p-sm {
+    padding: 10px;
+  }
+  .pull-right{
+    float: right;
+  }
+  .pull-left{
+    float: left;
+  }
+.panel-heading {
+    background: #22436d;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+  }
+  .flex {
+     display: flex;
+     flex-wrap: wrap;
+  }
+  textarea {
+     resize: none;
+     min-height: 90px !important;
+  }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

@@ -1,0 +1,75 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add Item</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-4 col-lg-4"><strong>Name</strong></div>
+      <div class="col-md-8 col-lg-8"><input type="text" [(ngModel)]="item.name" name="name" class="form-control"
+                                            required>
+      </div>
+    </div>
+    <div class="row mt-md">
+      <div class="col-md-4 col-lg-4"><strong>Description</strong></div>
+      <div class="col-md-8 col-lg-8"><textarea [(ngModel)]="item.description" name="description" class="form-control"
+                                               required
+                                               ng-maxlength="1000" rows="4"
+                                               cols="50"></textarea></div>
+    </div>
+    <div class="row mt-md">
+      <div class="col-md-4 col-lg-4"><strong>Price</strong></div>
+      <div class="col-md-8 col-lg-8"><input type="number" class="form-control" [(ngModel)]="item.price" required>
+      </div>
+    </div>
+    <div class="row mt-md">
+      <div class="col-md-4 col-lg-4"><strong>Upload Image</strong></div>
+      <div class="col-md-8 col-lg-8"><input type="file" (change)="onChange($event)" class="form-control"/></div>
+    </div>
+    <div class="row" style="background: rose; color: red;" ng-if="error">
+      {{error}}
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="saveItems()">Save</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<div class="panel-heading clearfix">
+  <button class="btn btn-primary btn-sm pull-right" (click)="openBackDropCustomClass(content)">
+    <strong>+</strong>&nbsp;Add Item
+  </button>
+  <span class="pull-left">List Of Items</span>
+</div>
+<div class="panel-body thin-scroll" style="height: calc(100vh - 300px)">
+  <div *ngIf="itemList">
+    <a class="list-group-item" *ngFor="let item of itemList">
+      <div class="media-box">
+        <div class="pull-left mr-sm">
+          <img class="media-box-object img-circle thumb32" src="{{item.fileDownloadURL}}"
+               style="cursor: pointer;"
+               height="50px" width="50px"
+               alt="Image">
+        </div>
+        <div class="media-box-body clearfix">
+          <small class="pull-right">{{item.price}}$</small>
+          <strong
+            class="media-box-heading text-primary"
+            (click)="goToItemDetails(item.id)"
+            style="cursor: pointer">
+            <span class="circle circle-success circle-lg text-left"></span>{{item.name}}
+          </strong>
+          <p class="mb-sm"><small>{{item.description}}</small>
+            <button class="btn btn-danger pull-right" (click)="deleteItem(item.id)" style="padding: 4px 8px 4px 8px;"
+            ><strong>X</strong></button>
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="row" *ngIf="!itemList">
+    <h2>No Data Available </h2>
+  </div>
+</div>
